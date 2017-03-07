@@ -1,1 +1,1 @@
-Server template for build-app. Project "simple".
+Client vue.js template for build-app. Project "simple".

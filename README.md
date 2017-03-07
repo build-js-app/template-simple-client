@@ -1,1 +1,1 @@
-Server template for build-app. Project "simple".
+Client angular template for build-app. Project "simple".

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 
 import dataService from './services/dataService';
+import ListComponent from './components/ListComponent';
 import logo from './logo.svg';
 import './App.css';
 
@@ -40,6 +41,9 @@ class App extends Component {
           <p className="App-intro">
               {displayMessage}
           </p>
+
+          <h2></h2>
+          <ListComponent />
       </div>
     );
   }

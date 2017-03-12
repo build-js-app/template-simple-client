@@ -10,12 +10,10 @@
     "dev": "vbuild -d",
     "build": "vbuild"
   },
-  "devDependencies": {
-    "vbuild": "^6.0.0"
-  },
   "license": "MIT",
   "dependencies": {
     "jquery": "^3.1.1",
-    "toastr": "^2.1.2"
+    "toastr": "^2.1.2",
+    "vue": "^2.2.2"
   }
 }

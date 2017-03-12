@@ -32,18 +32,23 @@ class App extends Component {
     let displayMessage = this.state.message ? this.state.message : 'Hello World from client!';
 
     return (
-      <div className="App">
-          <div className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
+      <div className="app">
+          <div className="app-header">
+              <img src={logo} className="app-logo" alt="logo" />
               <h2>Welcome to React</h2>
           </div>
 
-          <p className="App-intro">
-              {displayMessage}
-          </p>
+          <div className="app-intro">
+              <h2>Server message</h2>
 
-          <h2></h2>
-          <ListComponent />
+              <div>Message from server: <b>{displayMessage}</b></div>
+
+              <br/>
+
+              <h2>Items list</h2>
+
+              <ListComponent />
+          </div>
       </div>
     );
   }

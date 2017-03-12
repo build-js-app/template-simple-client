@@ -4,15 +4,25 @@
       <h1 :class="$style.title"><img src="https://vuejs.org/images/logo.png" width="80" alt=""></h1>
     </section>
     <section :class="$style.tip">
-      <p>{{message}}</p>
+      <h2>Server message</h2>
+
+      <div>Message from server: <b>{{message}}</b></div>
+
+      <br/>
+
+      <h2>Items list</h2>
+
+      <list-component></list-component>
     </section>
   </div>
 </template>
 
 <script>
   import dataService from '../services/dataService';
+  import ListComponent from './ListComponent.vue';
 
   export default {
+    components: {ListComponent},
     name: 'app',
     data () {
       return {
@@ -48,7 +58,7 @@
 <!-- you can use css modules but it's not necessary -->
 <style module>
   .welcome {
-    height: 50%;
+    height: 20%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,11 +89,7 @@
     margin: 0 20px;
   }
   .tip {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50%;
-    font-size: 30px;
-    color: #808087;
+    margin-left: 100px;
+    font-size: 20px;
   }
 </style>

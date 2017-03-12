@@ -59,8 +59,15 @@ function httpPatch(url, data) {
     return processRequest(fetch(request));
 }
 
-async function httpDelete(url) {
-    let fetchData = fetch(url, {method: 'DELETE', credentials: 'same-origin'});
+async function httpDelete(url, data) {
+    let fetchData = fetch(url, {
+        headers: new Headers({
+            'Content-Type': 'application/json'
+        }),
+        credentials: 'same-origin',
+        method: 'DELETE',
+        body: JSON.stringify(data)
+    });
 
     return processRequest(fetchData);
 }

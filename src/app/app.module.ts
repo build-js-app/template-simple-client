@@ -4,12 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { ListComponent } from './list.component';
 
 import { DataService } from './data.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -17,6 +19,6 @@ import { DataService } from './data.service';
     HttpModule
   ],
   providers: [DataService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, ListComponent]
 })
 export class AppModule { }

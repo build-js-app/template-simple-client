@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import { Item } from './item';
 
 @Injectable()
 
@@ -11,6 +12,15 @@ export class DataService {
 
   getMessage(): Promise<string> {
     return this.http.get('/api/message')
+      .toPromise()
+      .then(response =>  {
+        return response.json().data;
+      })
+      .catch(this.handleError);
+  }
+
+  getItemsList(): Promise<Item[]> {
+    return this.http.get('/api/items')
       .toPromise()
       .then(response =>  {
         return response.json().data;

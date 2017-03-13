@@ -21,7 +21,7 @@ function addItem(name) {
 }
 
 function deleteItem(id) {
-    return httpHelper.delete('/api/items', {id});
+    return httpHelper.delete(`/api/items/${id}`);
 }
 
 function editItem(item) {

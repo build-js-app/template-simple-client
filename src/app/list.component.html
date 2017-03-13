@@ -2,14 +2,33 @@
   <div>
     <span>New item: </span>
 
-    <input type="text" name="newItem" class="form-control name-input" placeholder="Enter new item" />
+    <input type="text" name="newItem" class="form-control name-input" placeholder="Enter new item" [(ngModel)]="name" />
 
-    <a type="button" href="#">Add</a>
+    <a type="button" href="#" (click)="addItem()">Add</a>
   </div>
 
-  <div>
+  <div *ngIf="anyItems()">
     <h4>Items</h4>
+
+    <div *ngFor="let item of items">
+      <div *ngIf="itemToEdit && itemToEdit.id === item.id">
+        <input type="text" name="newItem" class="form-control item-name-input" placeholder="Enter item name"
+               [(ngModel)]="itemToEdit.name" />
+
+        <a type="button" href="#" class="item-btn" (click)="saveItem()">Save</a>
+
+        <a type="button" href="#" class="item-btn" (click)="cancelClick()">Cancel</a>
+      </div>
+
+      <div *ngIf="itemToEdit && itemToEdit.id !== item.id">
+        <span class="item-name">{{item.name}}</span>
+
+        <a type="button" href="#" class="item-btn" (click)="editItem(item)">Edit</a>
+
+        <a type="button" href="#" class="item-btn" (click)="deleteItem(item.id)">Delete</a>
+      </div>
+    </div>
   </div>
 
-  <h4>No items.</h4>
+  <h4 *ngIf="!anyItems()">No items.</h4>
 </div>

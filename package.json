@@ -5,6 +5,7 @@
   "version": "0.0.1",
   "repository": {},
   "scripts": {
+    "start": "vbuild --dev",
     "test": "echo lol",
     "lint": "vbuild --eslint",
     "dev": "vbuild -d",

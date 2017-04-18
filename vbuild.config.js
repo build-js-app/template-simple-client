@@ -4,14 +4,5 @@ const path = require('path');
 module.exports = options => ({
   entry: 'src/index.js',
   dist: 'build',
-  proxy: 'http://localhost:5000/api',
-  postcss: [
-    // add more postcss plugins here
-    // by default we have autoprefixer pre added
-  ],
-  webpack(config) {
-    config.resolve.modules.push(path.resolve('src'));
-
-    return config
-  }
+  proxy: 'http://localhost:5000/api'
 });

@@ -16,8 +16,8 @@
     "vbuild": "7.0.6"
   },
   "dependencies": {
-    "jquery": "^3.1.1",
-    "toastr": "^2.1.2",
-    "vue": "^2.2.2"
+    "jquery": "3.1.1",
+    "toastr": "2.1.2",
+    "vue": "2.2.2"
   }
 }

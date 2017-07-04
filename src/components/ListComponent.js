@@ -62,7 +62,7 @@ class ListComponent extends Component {
     }
 
     async deleteItemAction(id) {
-        let isDeleteConfirm = confirm('Are you sure?');
+        let isDeleteConfirm = window.confirm('Are you sure?');
 
         if (isDeleteConfirm) {
             await dataService.deleteItem(id);
@@ -97,7 +97,7 @@ class ListComponent extends Component {
             return;
         }
 
-        let isSaveConfirm = confirm('Are you sure?');
+        let isSaveConfirm = window.confirm('Are you sure?');
 
         if (isSaveConfirm) {
             await dataService.editItem(item);
@@ -121,7 +121,7 @@ class ListComponent extends Component {
                     <input type="text" name="newItem" className="form-control name-input" placeholder="Enter new item"
                            value={this.state.name} onChange={this.updateState} />
 
-                    <a type="button" href="#" onClick={this.addNewItem}>Add</a>
+                    <button className="link" onClick={this.addNewItem}>Add</button>
                 </div>
 
                 {this.anyItems ? (
@@ -163,17 +163,17 @@ class ListComponent extends Component {
                         <input type="text" name="newItem" className="form-control item-name-input" placeholder="Enter item name"
                                value={this.state.itemToEdit.name} onChange={this.updateItemState} />
 
-                        <a type="button" href="#" className="item-btn" onClick={saveClick}>Save</a>
+                        <button className="link item-btn" onClick={saveClick}>Save</button>
 
-                        <a type="button" href="#" className="item-btn" onClick={cancelClick}>Cancel</a>
+                        <button className="link item-btn" onClick={cancelClick}>Cancel</button>
                     </div>
                 ) : (
                     <div>
                         <span className="item-name">{item.name}</span>
 
-                        <a type="button" href="#" className="item-btn" onClick={editClick}>Edit</a>
+                        <button className="link item-btn" onClick={editClick}>Edit</button>
 
-                        <a type="button" href="#" className="item-btn" onClick={deleteClick}>Delete</a>
+                        <button className="link item-btn" onClick={deleteClick}>Delete</button>
                     </div>
                 )}
             </div>

@@ -3,8 +3,7 @@
         <div>
             <span>New item: </span>
 
-            <input type="text" name="newItem" class="form-control name-input" placeholder="Enter new item" :value="name"
-                   v-model="name" />
+            <input type="text" name="newItem" class="form-control name-input" placeholder="Enter new item" v-model="name" />
 
             <a type="button" href="#" @click="addItem">Add</a>
         </div>
@@ -12,10 +11,10 @@
         <div v-if="anyItems">
             <h4>Items</h4>
 
-            <div v-for="item in items">
+            <div v-for="item in items" :key="item.id">
                 <div v-if="itemToEdit && itemToEdit.id === item.id">
                     <input type="text" name="newItem" class="form-control item-name-input" placeholder="Enter item name"
-                           :value="itemToEdit.name" v-model="itemToEdit.name" />
+                           v-model="itemToEdit.name" />
 
                     <a type="button" href="#" class="item-btn" @click="saveItem()">Save</a>
 
@@ -37,27 +36,27 @@
 </template>
 
 <style>
-    .name-input {
-        font-size: 16px;
-        width: 250px;
-        margin: 0 20px;
-    }
+.name-input {
+  font-size: 16px;
+  width: 250px;
+  margin: 0 20px;
+}
 
-    .item-name {
-        width: 380px;
-        display: inline-block;
-    }
+.item-name {
+  width: 380px;
+  display: inline-block;
+}
 
-    .item-btn {
-        margin-right: 25px;
-    }
+.item-btn {
+  margin-right: 25px;
+}
 
-    .item-name-input {
-        font-size: 16px;
-        width: 354px;
-        margin-right: 20px;
-    }
+.item-name-input {
+  font-size: 16px;
+  width: 354px;
+  margin-right: 20px;
+}
 </style>
 
-<script src="./ListComponent.vue.js"></script>
-
+<script src="./ListComponent.vue.js">
+</script>
